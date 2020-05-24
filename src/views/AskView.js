@@ -1,5 +1,6 @@
 import React, { useState,Component } from 'react'
 import PropTypes from 'prop-types';
+import {NavLink} from 'react-router-dom'
 import { fetchAskList } from '../api/index'
 
 class AskView extends Component {
@@ -16,7 +17,6 @@ class AskView extends Component {
       this.setState({
         userData: data,
       })
-      console.log(this.state.userData);
     } catch (error) {
       console.log(error);
     }
@@ -46,16 +46,15 @@ class AskView extends Component {
 }
 
 function AskList(props){
-  const [id, setId] = useState(props.id);
-  const [title, setTitle] = useState(props.title);
-  const [user, setUser] = useState(props.user);
+  const [id] = useState(props.id);
+  const [title] = useState(props.title);
+  const [user] = useState(props.user);
   const [date, setDate] = useState(new Date().toString());
-  console.log(id);
   return (
     <li className="list">
       <div>ID:{id}</div>
       <div>title:{title}</div>
-      <div>user:{user}</div>
+      <div><NavLink to={`/user/${user}`}>{user}</NavLink></div>
       <div>{date}</div>
       <button type="button" onClick={() => setDate(new Date().toString())}>버튼</button>
     </li>

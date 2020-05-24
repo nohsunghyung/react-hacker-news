@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import AskView from './components/AskView'
+import Route from './routes/index'
 
 export class App extends Component {
   constructor(props) {
@@ -13,7 +13,7 @@ export class App extends Component {
   render() {
     return (
       <div className="app">
-        <AskView></AskView>
+        <Route />
       </div>
     )
   }

@@ -9,6 +9,11 @@ function fetchAskList(){
   return instance.get('ask/1.json')
 }
 
+function fetchUserInfo(username) {
+  return instance.get(`user/${username}.json`)
+}
+
 export {
-  fetchAskList
+  fetchAskList,
+  fetchUserInfo
 }
