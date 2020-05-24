@@ -2,21 +2,20 @@ import React, { useState,useEffect } from 'react';
 import {fetchUserInfo} from '../api/index'
 
 const UserView = ({match}) => {
-  let [userInfo, setUser] = useState([]);
-  const username = match.params.username;
+  const [userInfo, setUser] = useState([]);
   
-  const setUserInfo = async () => {
-    const { data } = await fetchUserInfo(username);
-    try {
-      setUser( userInfo = data )
-    } catch (err) {
-      console.log(err);
-    }
-  }
-
   useEffect(() => {
-    setUserInfo();
-  });
+    const getUserInfo = async () => {
+      const { data } = await fetchUserInfo(match.params.username);
+      try {
+        setUser(data);
+        console.log(data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    getUserInfo();
+  },[match.params.username]);
 
   return (
     <div>

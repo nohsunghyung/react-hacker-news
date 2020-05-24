@@ -1,0 +1,41 @@
+body,ul,li {
+	margin: 0;
+	padding: 0;
+}
+.header {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 10px 0;
+  background-color: #666;
+}
+.header li {
+  list-style: none;
+  margin: 0 10px;
+}
+.header a {
+    text-decoration: none;
+    color: #fff;
+}
+.header a.active {
+    color: skyblue;
+}
+
+.item-list {
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+}
+.title-area {
+  margin-bottom: 5px;
+}
+.title-area a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #000;
+}
+.point {
+  margin-right: 5px;
+}
+.user {
+  color: #000;
+}

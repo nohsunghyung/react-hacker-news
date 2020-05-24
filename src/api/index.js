@@ -4,9 +4,12 @@ const instance = axios.create({
   baseURL: 'https://api.hnpwa.com/v0/'
 })
 
-
 function fetchAskList(){
   return instance.get('ask/1.json')
+}
+
+function fetchNewsList() {
+  return instance.get('news/1.json')
 }
 
 function fetchUserInfo(username) {
@@ -15,5 +18,6 @@ function fetchUserInfo(username) {
 
 export {
   fetchAskList,
-  fetchUserInfo
+  fetchUserInfo,
+  fetchNewsList
 }
