@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import { NavLink } from 'react-router-dom'
 import { fetchNewsList } from '../api/index'
 
 const NewsView = () => {
@@ -9,7 +10,6 @@ const NewsView = () => {
       const { data } = await fetchNewsList();
       try {
         setNews(data);
-        // console.log(data);
       } catch (err) {
         console.log(err);
       }
@@ -18,9 +18,22 @@ const NewsView = () => {
   },[])
 
   return (
-    <div>
-      news
-    </div>
+    <ul>
+      {newsList.map(list => {
+        return (
+          <li className="item-list" key={list.id}>
+            <div className="title-area">
+              <a href={list.url}>{list.title}</a>
+            </div>
+            <div>
+              <span className="point">{list.points || 0} point</span>
+              <NavLink to={`user/${list.user}`} className="user">{list.user}</NavLink>
+              <small>{list.time_ago}</small>
+            </div>
+          </li>
+        )
+      })}
+    </ul>
   )
 }
 

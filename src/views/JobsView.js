@@ -25,7 +25,7 @@ const JobsView = () => {
               <a href={list.url}>{list.title}</a>
             </div>
             <div>
-              <span className="point">{list.point || 0} point</span>
+              <span className="point">{list.points || 0} point</span>
               <small>{list.time_ago}</small>
             </div>
           </li>

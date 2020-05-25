@@ -17,7 +17,6 @@ class AskView extends Component {
       this.setState({
         userData: data,
       })
-      console.log(this.state.userData);
     } catch (error) {
       console.log(error);
     }
@@ -36,7 +35,7 @@ class AskView extends Component {
               </div>
               <div>
                 <span className="point">{list.points} point</span>
-                <NavLink to={`/user/${list.user}`} className="user">{list.user}</NavLink>
+                <NavLink to={`user/${list.user}`} className="user">{list.user}</NavLink>
                 <small> by {list.time_ago}</small>
               </div>
             </li>
