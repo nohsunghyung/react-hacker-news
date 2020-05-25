@@ -32,7 +32,6 @@ class AskView extends Component {
           return (
             <li className="item-list" key={list.id}>
               <div className="title-area">
-                <span>{index + 1}</span>
                 <NavLink to="dd">{list.title}</NavLink>
               </div>
               <div>

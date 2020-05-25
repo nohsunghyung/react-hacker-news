@@ -9,7 +9,6 @@ const UserView = ({match}) => {
       const { data } = await fetchUserInfo(match.params.username);
       try {
         setUser(data);
-        console.log(data);
       } catch (err) {
         console.log(err);
       }

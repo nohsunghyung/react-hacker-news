@@ -12,6 +12,10 @@ function fetchNewsList() {
   return instance.get('news/1.json')
 }
 
+function fetchJobsList() {
+  return instance.get('jobs/1.json')
+}
+
 function fetchUserInfo(username) {
   return instance.get(`user/${username}.json`)
 }
@@ -19,5 +23,6 @@ function fetchUserInfo(username) {
 export {
   fetchAskList,
   fetchUserInfo,
-  fetchNewsList
+  fetchNewsList,
+  fetchJobsList
 }

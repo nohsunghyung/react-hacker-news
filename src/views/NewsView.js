@@ -9,7 +9,7 @@ const NewsView = () => {
       const { data } = await fetchNewsList();
       try {
         setNews(data);
-        console.log(data);
+        // console.log(data);
       } catch (err) {
         console.log(err);
       }
